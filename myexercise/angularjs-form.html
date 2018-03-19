@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-cn" ng-app>
+ <head>
+  <!--页面编码-->
+  <meta charset="UTF-8">
+  <!--响应式布局-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>angularjs</title>
+  <!--Bootstrap样式文件-->
+  <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
+  <!--自定义样式文件-->
+  <link rel='stylesheet/less' type='text/css' href='styles/site2.less'>
+  <!--[if lt IE9]>
+    <script src='scripts/html5.min.js'></script>
+    <script src='scripts/respond.min.js'></script>
+  <![endif]-->
+  <!--标签名称-->
+  <title>angularjs</title>
+ </head>
+ 
+ <body class='container'>	
+   <header class='page-header hidden-xs'>
+     <h2></h2>
+   </header>
+   
+   <div class='row'>
+		<div class='col-sm-6 col-sm-offset-2'>
+		  <form id='frmLogin' name='frmLogin' class='form-horizontal' method='get' action='form.html'>
+		    		      <div class='form-group has-feedback' ng-class="frmLogin.email.$dirty?(frmLogin.email.$valid?'has-success':'has-error'):''">
+		    			      <label class='col-sm-3 control-label' for='email'>email</label>
+		    			      <div class='col-sm-9'>
+		    			      <input id='email' type='email' name='email' data-ng-model='email' data-ng-minlength='6' class='form-control' placeholder='enter email' required>
+		    			      <span ng-show='frmLogin.email.$dirty && frmLogin.email.$valid' ng-class="'glyphicon-ok'" class='glyphicon glyphicon-ok form-control-feedback'></span>
+		    			      <span ng-show='frmLogin.email.$dirty && frmLogin.email.$invalid' ng-class="'glyphicon-remove'" class='glyphicon glyphicon-remove form-control-feedback'></span>
+		    			      </div>
+		    		      </div>
+		                  <div class='form-group has-feedback' ng-class="frmLogin.username.$dirty?(frmLogin.username.$valid?'has-success':'has-error'):''">
+		    			      <label class='col-sm-3 control-label' for='username'>username</label>
+		    			      <div class='col-sm-9'>
+		    			      <input id='username' type='text' name='username' data-ng-model='username' data-ng-minlength='6' class='form-control' placeholder='enter username' required>
+		    			      <span ng-show='frmLogin.username.$dirty && frmLogin.username.$valid' ng-class="'glyphicon-ok'" class='glyphicon form-control-feedback'></span>
+		    			      <span ng-show='frmLogin.username.$dirty && frmLogin.username.$invalid' ng-class="'glyphicon-remove'" class='glyphicon form-control-feedback'></span>
+		    			      </div>
+		    		      </div>
+		    		      <div class='form-group has-feedback' ng-class="frmLogin.password.$dirty?(frmLogin.password.$valid?'has-success':'has-error'):''">
+		    			      <label class='col-sm-3 control-label' for='psaaword'>psaaword</label>
+		    			      <div class='col-sm-9'>
+		    			      <input id='password' type='password' name='password' data-ng-model='password' data-ng-minlength='9' class='form-control' placeholder='enter psaaword' required>
+		    			     <span ng-show='frmLogin.password.$dirty && frmLogin.password.$valid' ng-class="'glyphicon-ok'" class='glyphicon form-control-feedback'></span>
+		    			     <span ng-show='frmLogin.password.$dirty && frmLogin.password.$invalid' ng-class="'glyphicon-remove'" class='glyphicon form-control-feedback'></span>
+		    			      </div>
+		    		      </div>
+		      <p class='text-right'>
+			      <button ng-disabled='frmLogin.$invalid' id='btnSubmit' type='submit' class='btn btn-info'>Submit</button>
+			      <button type='reset' class='btn btn-warning'>Reset</button>
+		      </p>
+		  </form>
+		</div>
+   </div>
+   
+   <footer class='navbar-fixed-bottom text-center'>
+   	 all images and contents &copy;
+   	 <abbr title='Hyper Tet Markup Language'>HTML</abbr>&trade;
+   </footer>
+   
+   
+   
+   <!--Jquery脚本文件-->
+   <script src='scripts/jquery.min.js'></script>
+   <!--Less脚本文件-->
+   <script src='scripts/less.js'></script>
+   <script src='scripts/angular-1.2.5.js'></script>
+   <!--Bootstrap脚本插件文件-->
+   <script src='bootstrap/js/bootstrap.min.js'></script>
+   <script src='js/controller.js'></script>
+   <script src='js/module.js'></script>
+   <script>
+       
+   </script>   
+</body>
+</html>

@@ -1,0 +1,61 @@
+@acolor:#00fafa;
+@bcolor:#faf;
+@color:teal;
+
+//引导模式
+.mixin(@a)when(lightness(@a)>=50%){
+  background:black;
+}
+.mixin(@a)when(lightness(@a)<=50%){
+  background:white;
+}
+
+.mixin(dark,@c:@color){
+  color:darken(@c,10%);
+}
+.mixin(light,@c:@color){
+  color:lighten(@c,10%);
+}
+.border(@width:1px){
+  border:@width solid @color;
+}
+.border-radius(@radius:5px){
+     -moz-border-radius:@radius;
+  -webkit-border-radius:@radius;
+          border-radius:@radius;
+}
+.box-shadow(@x:5px,@y:5px,@c:@color){
+   box-shadow:@x @y @color;
+}
+header{
+  color:@color;
+  .border(2px);
+  .border-radius;
+  .box-shadow;
+  .mixin(#678);
+  .mixin(light,@acolor);
+  h2{
+    //color:fadeout(@color,60%);
+    //color:@acolor;
+    color:spin(#f00,-100);
+  }
+  h3{color:red;
+    a{color:#0f0;&:hover{color:#f00;}}
+  }
+}
+@myColor:#faa;
+.myStyle(@c:@myColor){
+  color:@c;
+}
+footer{
+  .myStyle();
+}
+.myH2(@m){
+  background:@m;
+}
+header{
+  //.myH2(#aaa);
+}
+div{
+  div{background-color:@bcolor;div{background-color:@bcolor+#123;div{background-color:@bcolor+#234;div{background-color:@bcolor+#345;}}}}
+}

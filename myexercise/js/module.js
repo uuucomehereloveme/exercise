@@ -1,0 +1,31 @@
+angular.module('appTest',[])
+    .controller('testCtrl',testController)
+    .controller('helloCtrl',helloController);
+angular.module('appBook',[])
+    .controller('testCtrl',testController)
+    .controller('bookCtrl',bookController);
+angular.module('appTax',[])
+    .controller('taxCtrl',taxController);
+var app = angular.module('myApp',['ngRoute']);
+app.config(['$routeProvider',function($routeProvider){
+	$routeProvider
+		.when('/welcome',{
+		    templateUrl:'welcome.html',
+		    controller:'welcomeCtrl'
+		    })
+	    .when('/A',{
+	    	templateUrl:'profile.html',
+	    	controller:'profileCtrl'
+	    })
+	    .when('/about',{
+	    	templateUrl:'about.html',
+	    	controller:'aboutCtrl'
+	    })
+	    .otherwise({
+	    	redirectTo:'/welcome'
+	    });
+}]);
+app.controller('welcomeCtrl',welcomeController)
+   .controller('profileCtrl',profileController)
+   .controller('aboutCtrl',aboutController)
+   .controller('testCtrl',testController);

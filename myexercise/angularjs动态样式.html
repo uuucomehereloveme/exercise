@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-cn" ng-app>
+ <head>
+  <!--页面编码-->
+  <meta charset="UTF-8">
+  <!--响应式布局-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>angularjs</title>
+  <!--Bootstrap样式文件-->
+  <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
+  <!--自定义样式文件-->
+  <link rel='stylesheet/less' type='text/css' href='styles/site2.less'>
+  <!--[if lt IE9]>
+    <script src='scripts/html5.min.js'></script>
+    <script src='scripts/respond.min.js'></script>
+  <![endif]-->
+  <!--标签名称-->
+  <title>angularjs</title>
+  <style>
+    .e{ 
+    	color:#28A4C9;
+    	background:#faf;
+    }
+    .o{
+    	color:#afa;
+    }
+  </style>
+ </head>
+ 
+ <body class='container'>	
+   <header class='page-header hidden-xs'>
+     <h2></h2>
+   </header>
+   
+   <div class='row'>
+	   <div class='col-sm-4' ng-init="url='1.jpg'">
+	       <img class="img-responsive" alt='' src='img/{{url}}'>
+	   </div>
+   </div>
+   
+   <div ng-init='flag=true;msg="hello wrold"'>
+       <div ng-show='flag' class='jumbotron'>
+           {{msg}}
+       </div>
+       <div ng-hide='flag' class='jumbotron'>
+           <input ng-model='msg' type='text' class='form-control'>
+       </div>
+       <button ng-show='flag' ng-click='flag=!flag' class='btn btn-info'>Edit</button>
+       <button ng-hide='flag' ng-click='flag=!flag' class='btn btn-info'>Submit</button>
+   </div>
+   
+   <div ng-init="l=[1,2,3,4]">
+       <ul class='list-group'>
+           <li class='list-group-item' ng-repeat='m in l' ng-class-even='"e"' ng-class-odd='"o"'>{{m}}</li>
+       </ul>
+   </div>
+   
+   <div ng-init="myClass='jumbotron'" ng-controller='styleCtrl'>
+       <div ng-class='myClass'>
+	       <div ng-style="myStyle">
+	       </div>
+	       <input type='color' ng-model='color'>{{color}}
+	   </div>
+   </div>
+   
+   <div ng-controller='test'>
+       <div ng-click='changeSize()' style='width:100px;height:100px;background:red;'></div> 
+       <div>
+           {{w}} - {{h}}
+       </div> 
+       <div>
+           <input ng-model='w'>
+           <input ng-model='h'>
+       </div> 
+       
+       <div>
+           <input type='text' ng-model='name'>
+       	   <label class='label-success'>{{name}}</label>
+       </div>
+       <div>
+           <span ng-bind='info.title'></span>
+           <span ng-bind='info.price'></span>
+       </div>
+       
+       <div ng-controller='menuCtrl'>
+           <ul class='nav nav-pills'>
+           	   <li ng-repeat='m in menus'>
+           	       <a data-url={{m.url}} ng-click="changeLink($event.target)" data-toggle='tab'>{{m.title}}</a>
+           	   </li>
+               <!--<li class='active'><a ng-click="url='about.html'" data-toggle='tab'>About</a></li>
+               <li><a data-toggle='tab'>Email</a></li>
+               <li><a data-toggle='tab'>Profile</a></li>-->
+           </ul>
+           <div ng-include='url' class='focus'>
+               
+           </div>
+       </div>
+   </div>
+   
+   <footer class='navbar-fixed-bottom text-center'>
+   	 all images and contents &copy;
+   	 <abbr title='Hyper Tet Markup Language'>HTML</abbr>&trade;
+   </footer>
+   
+   
+   
+   <!--Jquery脚本文件-->
+   <script src='scripts/jquery.min.js'></script>
+   <!--Less脚本文件-->
+   <script src='scripts/less.js'></script>
+   <script src='scripts/angular-1.2.5.js'></script>
+   <!--Bootstrap脚本插件文件-->
+   <script src='bootstrap/js/bootstrap.min.js'></script>
+   <script src='js/controller.js'></script>
+   <script src='js/module.js'></script>
+   <script>
+       function styleCtrl($scope,$http,$element){
+           $scope.color = 'blue';
+           $scope.myStyle = {
+           	   width:100,
+           	   height:100,
+           	   background:$scope.color
+           };
+           $scope.$watch('color',function(to,from){
+	   	       $scope.myStyle.background = to;
+	   	   });
+       }
+       function menuCtrl($scope,$http,$element){
+           $http.get('json/menu.json').success(function(data){
+               $scope.menus = data;
+               $scope.url = data[0].url;
+           });
+           $scope.changeLink = function(target){
+               $scope.url = $(target).attr('data-url');
+           } ; 
+       }
+       function test($scope,$http,$element){               	
+	   	   var d = $element.children().eq(0);
+	   	   $scope.w = d.width();
+	   	   $scope.h = d.height();
+	   	   $scope.$watch('w',function(to,from){
+	   	       d.width(to);
+	   	   });
+	   	   $scope.$watch('h',function(to,from){
+	   	       d.height(to);
+	   	   });
+	   	   $scope.changeSize = function(){
+	   	       $scope.w = parseInt($scope.w) + 10;
+	   	       $scope.h = parseInt($scope.h) + 10;
+	   	   };
+	   	    
+		   $scope.name = 'test';
+		   $scope.info = {title:'angularjs',price:'10.99'};
+	}
+   </script>   
+</body>
+</html>;

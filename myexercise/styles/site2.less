@@ -1,0 +1,32 @@
+@base-color:#000;
+@fore-color:darken(@base-color,50%);
+@back-color:lighten(@base-color,50%);
+
+.bordered(@width:1px,@type:dotted,@color:@back-color){
+  border:@arguments;
+}
+
+.rounded(@radius:5px){
+     -moz-border-radius:@radius;
+  -webkit-border-radius:@radius;
+          border-radius:@radius;
+}
+
+.shadow(@x:5px,@y:5px,@color:@back-color){
+  box-shadow:@arguments;
+  margin-bottom:5px;
+}
+
+.focus{
+  color:@fore-color;
+  .shadow();
+}
+
+header,footer,section,aside,article,hgroup,div,nav{
+  .rounded();
+  padding:1px;
+}
+.jumbotron{
+  margin:0px;
+}
+

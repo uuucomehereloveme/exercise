@@ -1,0 +1,73 @@
+#myImages{
+	width: 120px;
+	box-shadow:-4px -4px #EAFFAF;
+}
+.jumbotron{
+	background:url(../img/7.jpg);
+	background-size:100%;
+    background-repeat:no-repeat;
+}
+.container{
+	background:url(../img/3.jpg);
+	background-size:100%;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+body{
+	padding-top:60px;
+}
+#headerPhoto{
+	position:relative;
+	background:url(../img/4.jpg);
+	background-size:100%;
+    background-repeat:no-repeat;
+}
+#nameCx{
+	position:absolute;
+	top:135px;
+	left:80px;
+}
+#nameCx code{
+	color:#2AABD2;
+	box-shadow:-2px -2px #31B0D5;
+}
+#responal{
+	padding-top: 10px;
+}
+.firstPhoto{
+ opacity:1;
+ z-index:1;
+}
+ .slideShow div a{
+ position: absolute;
+ }
+.slideShow{
+ width: 692px;
+ height: 328px; 
+ border: 1px #eeeeee solid;
+ margin: 20px auto;
+ position: relative;
+ overflow: hidden; 
+  }
+.showNav{ 
+ position: absolute;
+ right: 10px;
+ bottom: 5px;
+ text-align:center;
+ font-size: 12px; 
+ line-height: 20px;
+ z-index:2;
+  }
+.showNav span{
+ cursor: pointer;
+ display: block;
+ float: left;
+ width: 20px;
+ height: 20px;
+ background: #AAFFAA;
+ margin-left: 2px;
+ color: #fff;
+  }
+.slideShow .showNav .active{
+ background: #31B0D5;
+  }

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-cn">
+ <head>
+  <!--父路径-->
+  <base href="/bootstrapday01/">  
+  <!--页面编码-->
+  <meta charset="UTF-8">
+  <!--响应式布局-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="render" content="webkit">
+  <meta name="Author" content="cx">
+  <meta name="Keywords" content="bootstrap,html5,css3">
+  <meta name="Description" content="bootscrap基本模板">
+  <!--Bootstrap样式文件-->
+  <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
+  <!--自定义样式文件-->
+  <link rel='stylesheet' href=''>
+  <!--[if lt IE9]>
+    <script src='scripts/html5.min.js'></script>
+    <script src='scripts/respond.min.js'></script>
+  <![endif]-->
+  <!--标签名称-->
+  <title>Form</title>
+ </head>
+ 
+ 
+ <body class='container'>	
+   <header class='page-header hidden-xs'>
+     <h2>Form</h2>
+   </header>
+   
+   <div>
+   	  <div class='input-group col-sm-6 col-sm-offset-3'>
+	      <span class='input-group-addon'>百度一下</span>  
+	      <input type='text' class='form-control' required>
+	      <span class='input-group-btn'>
+	     	  <button type='button' class='btn btn-warning'>GO</button>
+	      </span>
+      </div>
+   	  
+   	  <div class='btn-group'>
+   	  	<button type='button' class='btn btn-info'>Search</button>
+   	  	<button data-toggle='dropdown' type='button' class='btn btn-info'>
+   	  		<span class='caret'></span>
+        </button>
+        <ul class='dropdown-menu'>
+   			<li class='dropdown-header'><a href='javascript:void(0)'>0</a></li>
+   			<li><a href='javascript:void(0)'>1</a></li>
+   			<li><a href='javascript:void(0)'>2</a></li>
+   			<li class='divider'></li>
+   			<li class='dropdown-header'><a href='javascript:void(0)'>0</a></li>
+   			<li><a href='javascript:void(0)'>3</a></li>
+   			<li class='disabled'><a href='javascript:void(0)'>4</a></li>
+   		</ul>
+   	  </div>
+   	
+   	  <div class='btn-group'>
+   	    <button type='button' class='btn btn-sm btn-default'><span class='glyphicon glyphicon-log-in'></span> Login</button>
+   	    <button type='button' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-log-in'></span> Logout</button>
+   	    <button type='button' class='visible-md-block btn btn-lg btn-primary'>click</button>
+   	    <button type='button' class='visible-sm-inline btn btn-sm btn-primary'>click</button>
+   	  </div>
+   	  <div class='btn-group btn-group-vertical'>
+   	    <button type='button' class='btn btn-sm btn-default'><span class='glyphicon glyphicon-log-in'></span> Login</button>
+   	    <button type='button' class='btn btn-sm btn-primary'><span class='glyphicon glyphicon-log-in'></span> Logout</button>
+   	    <button type='button' class='visible-md-block btn btn-lg btn-primary'>click</button>
+   	    <button type='button' class='visible-sm-inline btn btn-sm btn-primary'>click</button>
+   	  </div>
+   	  
+   	<div class='dropdown'>
+   		<button data-toggle='dropdown' class='btn btn-default'>
+   			员工管理
+   			<span class='caret'></span>
+   		</button>
+   		<ul class='dropdown-menu'>
+   			<li class='dropdown-header'><a href='javascript:void(0)'>0</a></li>
+   			<li><a href='javascript:void(0)'>1</a></li>
+   			<li><a href='javascript:void(0)'>2</a></li>
+   			<li class='divider'></li>
+   			<li class='dropdown-header'><a href='javascript:void(0)'>0</a></li>
+   			<li><a href='javascript:void(0)'>3</a></li>
+   			<li class='disabled'><a href='javascript:void(0)'>4</a></li>
+   		</ul>
+   	</div>
+   	
+   	    <div class='row'>
+   	    	<div class='col-sm-6 col-sm-offset-2'>
+   	          <form id='femLogin' name='femLogin' class='form-horizontal' method='get' action='form.html'>
+			    		      <div class='form-group has-feedback'>
+			    			      <label class='col-sm-3 control-label' for='email'>email</label>
+			    			      <div class='col-sm-9'>
+			    			      <input id='email' type='email' class='form-control' placeholder='enter email' required>
+			    			      <span class=''></span>
+			    			      </div>
+			    		      </div>
+			                  <div class='form-group has-feedback'>
+			    			      <label class='col-sm-3 control-label' for='username'>username</label>
+			    			      <div class='col-sm-9'>
+			    			      <input id='username' type='text' class='form-control' placeholder='enter username' required>
+			    			      <span class='glyphicon glyphicon-warning-sign form-control-feedback'></span>
+			    			      </div>
+			    		      </div>
+			    		      <div class='form-group has-feedback'>
+			    			      <label class='col-sm-3 control-label' for='psaaword'>psaaword</label>
+			    			      <div class='col-sm-9'>
+			    			      <input id='password' type='password' class='form-control' placeholder='enter psaaword' required>
+			    			     <span class='glyphicon glyphicon-remove form-control-feedback'></span>
+			    			      </div>
+			    		      </div>
+			    		      <div class='input-group col-sm-9 col-sm-offset-3'>
+			    			      <span class='input-group-addon'>Email</span>  
+			    			      <input type='email' class='form-control' placeholder='enter Email' required>
+			    			     <span class='input-group-btn'>
+			    			     	<button type='button' class='btn btn-default'>GO</button>
+			    			     </span>
+			    		      </div>
+    		      <p class='text-right'>
+    			      <button id='btnSubmit' type='submit' class='btn-primary'>Submit</button>
+    			      <button type='reset' class='btn-danger'>Reset</button>
+    		      </p>
+    	      </form>
+   	    	</div>
+   	    </div>
+    	<button id='btnSubmit' type='button' class='btn btn-lg btn-primary'>Submit</button>
+    	<button id='btnSubmit1' type='button' class='btn btn-sm btn-success'>Submit</button>
+    	<button id='btnSubmit2' type='button' class='btn btn-xs btn-danger'>Submit</button>
+    	<button id='btnSubmit3' type='button' class='btn btn-info'>Submit</button>
+    	<button id='btnSubmit4' type='button' class='btn btn-warning'>Submit</button>
+    	<button id='btnSubmit5' type='button' class='btn btn-default'>Submit</button>
+    	<button id='btnSubmit6' type='button' class='btn btn-link'>Submit</button>
+    	<div class='row'>
+    	  <div class='col-sm-4'>
+    	    <img class='img-responsive img-thumbnail' alt='pic01' src='img/1.jpg'>
+    	  </div>
+    	  <div class='col-sm-4'>
+    	    <img class='img-responsive img-rounded' alt='pic01' style='border:1px solid #faf' src='img/canvas.png'>
+    	  </div>
+    	  <div class='col-sm-4'>
+    	    <img class='img-responsive img-circle' alt='pic01' style='border:1px solid #afa' src='img/hart.png'>
+    	  </div>
+    	</div>
+    	<!--情景文本-->
+    	<p class='text-primary'>a</p>
+    	<p class='text-info'>b</p>
+    	<p class='text-success'>c</p>
+    	<p class='text-warning'>d</p>
+    	<p class='text-danger'>e</p>
+    	<p class='text-muteded'>f</p>
+    	<!--情景背景-->
+    	<p class='label-primary'>a</p>
+    	<p class='label-info'>b</p>
+    	<p class='label-success'>c</p>
+    	<p class='label-warning'>d</p>
+    	<p class='label-danger'>e</p>
+    	
+    	<p style='min-height:150px;background-color:#abc'>
+    		<button class='close' type='button'>&times;</button>
+    	</p>
+    	<button type='button' class='btn btn-default'>
+    		click me
+    		<span class='caret'></span>
+    	</button>
+   </div>
+   
+   <footer class='navbar-fixed-bottom text-center'>
+   	 all images and contents &copy;
+   	 <abbr title='Hyper Tet Markup Language'>HTML</abbr>&trade;
+   </footer>
+   
+   
+   
+   <!--Jquery脚本文件-->
+   <script src='scripts/jquery.min.js'></script>
+   <!--Bootstrap脚本插件文件-->
+   <script src='bootstrap/js/bootstrap.min.js'></script>
+   <script>
+	    function checkInput(txt){
+	    	if(txt.val() == ''){
+	    		txt.parent().parent().removeClass().addClass('form-group has-error has-feedback');
+	    		txt.next().removeClass().addClass('glyphicon glyphicon-remove form-control-feedback');
+	    	}else{
+	    		txt.parent().parent().removeClass().addClass('form-group has-success has-feedback');
+	    		txt.next().removeClass().addClass('glyphicon glyphicon-ok form-control-feedback');
+	    	}
+	    }
+	  	$(function(){
+	  		$('#email').blur(function(){
+	  			checkInput($(this));
+	  		});
+	  		$('#username').blur(function(){
+	  			checkInput($(this));
+	  		});
+	  		$('#password').blur(function(){
+	  			checkInput($(this));
+	  		});
+	  	});
+   </script>
+ </body>
+</html>

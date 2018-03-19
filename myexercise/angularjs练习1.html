@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-cn">
+ <head>
+  <!--页面编码-->
+  <meta charset="UTF-8">
+  <!--响应式布局-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>angularjs</title>
+  <!--Bootstrap样式文件-->
+  <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
+  <!--自定义样式文件-->
+  <link rel='stylesheet/less' type='text/css' href='styles/site2.less'>
+  <!--[if lt IE9]>
+    <script src='scripts/html5.min.js'></script>
+    <script src='scripts/respond.min.js'></script>
+  <![endif]-->
+  <!--标签名称-->
+  <title>angularjs</title>
+ </head>
+ 
+ 
+ <body class='container'>	
+   <header class='page-header hidden-xs'>
+     <h2>案列</h2>
+   </header>
+   
+   <div data-ng-app='' data-ng-controller='helloController'>
+   	   <div class='row'>
+	   	   <div class='col-sm-2'>
+	   	       <input data-ng-model='hello' type='text' class='form-control'>
+	   	   </div>
+	   	   <div class='col-sm-2'>
+	   	       <input data-ng-model='person.firstName' type='text' class='form-control'>
+	   	   </div>
+	   	   <div class='col-sm-2'>
+	   	       <input data-ng-model='person.lastName' type='text' class='form-control'>
+	   	   </div>
+   	   </div>
+       
+       <p class='lead'>{{show()}}</p>
+   </div>
+   
+   <footer class='navbar-fixed-bottom text-center'>
+   	 all images and contents &copy;
+   	 <abbr title='Hyper Tet Markup Language'>HTML</abbr>&trade;
+   </footer>
+   
+   
+   
+   <!--Jquery脚本文件-->
+   <script src='scripts/jquery.min.js'></script>
+   <!--Less脚本文件-->
+   <script src='scripts/less.js'></script>
+   <script src='scripts/angular-1.2.5.js'></script>
+   <!--Bootstrap脚本插件文件-->
+   <script src='bootstrap/js/bootstrap.min.js'></script>
+   <script src='js/controller.js'></script>
+</body>
+</html>

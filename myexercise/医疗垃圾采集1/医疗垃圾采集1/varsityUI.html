@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>医疗垃圾管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="bar bar-nav">
+    <a class="pull-left" href="varsity.html"><i class="fa-angle-left"></i></a>
+    <div class="title">校队医疗垃圾</div>
+</header>  
+
+<div class="content">
+	<div class="queryform">
+        <table> 
+         <tr>
+             <td class="TDleft">垃圾房</td>
+             <td><div class="inputDiv"><select>
+             	<option></option>
+             </select></div></td>
+         </tr>     
+         <tr>
+             <td class="TDleft">校验人</td>
+             <td><div class="inputDiv"><input name="name" type="text" value="校队人"></div></td>
+         </tr>  
+         <tr>
+             <td class="TDleft">类别</td>
+             <td><div class="inputDiv">
+             <select>
+             	<option>感染性</option>
+             	<option>损伤性</option>
+             	<option>化学性</option>
+             	<option>病理性</option>
+             	<option>药物性</option>
+             </select></div></td>
+         </tr>    
+         <tr>
+             <td class="TDleft">条码</td>
+             <td><div class="inputDiv"><input name="name" type="text" value=""></div></td>
+         </tr>        
+         <tr>
+             <td class="TDleft">重量</td>
+             <td>
+             	<div class="inputDiv col"><input name="name" type="text" value=""></div>
+             	<div class="col2"><input name="button" type="button" id="button" class="bGray button" value="修改"></div>
+             </td>
+         </tr>     
+         <tr>
+             <td colspan="2">
+  				<label><input name="xd" type="radio"> 通过校队</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  				<label><input name="xd" type="radio"> 未通过校队</label>
+  			</td>
+         </tr>      
+       </table>
+  </div>
+</div>   
+
+      <div class="show_footer bgFFF">
+      		<div class="tab-black">
+            	<a class="btn-tool bPale" href="#">验证（0）</a>
+            </div>
+            <div class="tab-bg"></div>
+      </div>
+	<div class="visible"></div>
+</body>
+</html>

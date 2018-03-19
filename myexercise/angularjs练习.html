@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-cn">
+ <head>
+  <!--页面编码-->
+  <meta charset="UTF-8">
+  <!--响应式布局-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>angularjs</title>
+  <!--Bootstrap样式文件-->
+  <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
+  <!--自定义样式文件-->
+  <link rel='stylesheet/less' type='text/css' href='styles/site2.less'>
+  <!--[if lt IE9]>
+    <script src='scripts/html5.min.js'></script>
+    <script src='scripts/respond.min.js'></script>
+  <![endif]-->
+  <!--标签名称-->
+  <title>angularjs</title>
+ </head>
+ 
+ 
+ <body class='container'>	
+   <header class='page-header hidden-xs'>
+     <h2>案列</h2>
+   </header>
+   
+   <div data-ng-app='' data-ng-init="books=[
+   {pTotal:'合计',pCount:'数量',pName:'单价',price:10.99,count:10},
+   {pTotal:'合计',pCount:'数量',pName:'单价',price:20.99,count:15},
+   {pTotal:'合计',pCount:'数量',pName:'单价',price:30.99,count:18}
+   ]">
+       <div class='lead'>{{'AngularJS'+''+'二元运算器'}}</div>
+       <kbd>12</kbd>+<kbd>3</kbd>=<span class='label label-info'>{{ 12 + 3 }}</span>
+       <div class='list-group'>
+           <div data-ng-repeat='b in books' class='list-group-item focus'>
+               <span data-ng-bind='b.pName' class='label label-success'></span>：<span class='label label-danger'>{{b.price}}</span>
+
+		       <div class='row'>
+		           <div class='col-sm-2'>
+		               <span style='line-height:30px'>{{b.pCount}}：</span>
+		           </div>
+		           <div class='col-sm-2 col-sm-pull-1'>
+		               <input data-ng-model='b.count' type='text' class='form-control'>
+		           </div>
+		       </div>
+		       
+		       {{b.pTotal}}:{{b.price*b.count}}
+		   </div>
+	   </div>
+	   
+	   <form class='form-inline' data-ng-init='numA=12;numB=3'>
+	       <div class='form-group focus'>
+	           <input data-ng-model='numA' type='number' class='form-control'>
+	           <input data-ng-model='numB' type='number' class='form-control'>
+	           <label class='label label-danger'>{{numA+numB}}</label>
+	       </div>
+	   </form>
+	   
+	   <form class='form-inline' data-ng-init="name=''">
+	       <div class='form-group focus'>
+	           <input data-ng-model='name' type='text' class='form-control'>
+	           <label class='label label-warning'>尊敬的{{name}}!</label>
+	       </div>
+	   </form>
+   </div>
+   
+   <footer class='navbar-fixed-bottom text-center'>
+   	 all images and contents &copy;
+   	 <abbr title='Hyper Tet Markup Language'>HTML</abbr>&trade;
+   </footer>
+   
+   
+   
+   <!--Jquery脚本文件-->
+   <script src='scripts/jquery.min.js'></script>
+   <!--Less脚本文件-->
+   <script src='scripts/less.js'></script>
+   <script src='scripts/angular-1.2.5.js'></script>
+   <!--Bootstrap脚本插件文件-->
+   <script src='bootstrap/js/bootstrap.min.js'></script>
+   <script>
+      
+   </script>
+</body>
+</html>

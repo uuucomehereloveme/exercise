@@ -1,0 +1,84 @@
+/*—————————登陆表单—————————*/
+.loginform{ text-align:center;}
+.loginform .but{padding:0 16px;}
+.loginform select{ width:100%; border:0;background:transparent;}
+.loginform ul{padding-left:0;margin:18px 0;list-style:none;border-top: 1px solid #1975D1;}
+.loginform li{ position:relative;display:block;text-align:left;padding:16px 8px 16px 13px;border-bottom: 1px solid #1975D1;overflow:hidden; background-color:#FFF;}
+.loginform li.nobg{border:0px;border-bottom:1px solid #E2E5EA; background-color:#FFF;}
+
+.loginform .Tdright{padding:8px 23px 0 23px; text-align:left;}
+.loginform .Tdright a{ color:#666; font-size:14px;}
+.loginPad-title{ padding:16px 16px 0 16px;}
+
+/*用户管理中心*/
+.type-user {margin-top:5px;}
+.type-user-title{ padding-top:26px;text-align:center;}
+.type-user a{ display:block;padding:0 16px; height:68px; line-height:68px;border-bottom:1px solid #91A2C0; color:#555;}
+.type-user a:hover,.type-user a:visited{ color:#555;}
+.type-user a i{width:14px; height:68px; float:right; background:url(../images/icon/angle-right.png) center 30px no-repeat; background-size:auto 25%;}
+.type-user img{ vertical-align:middle; height:26px;}
+.type-user h3{vertical-align:middle;display:inline-block; font-size:21px;font-weight:600; width:135px;text-align:left; margin-left:10px; }
+a.bdYellow{}
+
+/*—————————输入查询—————————*/
+.inputDiv{display:block;text-align:left;padding:4px 8px; height:auto; min-height:21px; line-height:21px;border: 1px solid #959595; background-color:#F0EFEF;-border-radius:3px;-moz-border-radius:3px; -webkit-border-radius:3px; color:#333;}
+.col{width:70%; display:inline-block;}
+.col2{width:20%; display:inline-block;}
+
+.queryform{padding:8px 16px; background:#FFF; overflow:hidden;}
+.queryform table{width:100%;}
+.queryform table td{ padding:6px 0;}
+.queryform table td.TDleft{ width:40px; text-align:right; white-space:nowrap; padding-right:12px;}
+.selectAuto{ width:auto; border:1px solid #959595;background-color:#F0EFEF;}
+.toolbar{ background:#FFF; padding:18px;}
+
+/*主题设置*/
+.list_con {}
+.list_con i{ float:right;color:#0B77DF; font-size:1.4em;}
+.list_con i:after{content: "\f105";}
+.list_con .child{ margin-top:13px;display:block; overflow:hidden; background-color:#FFF;}
+.list_con .child a{ display:block; padding:12px 18px;border-bottom:1px solid #C9C9C9; color:inherit; overflow:hidden;}
+.list_con .child li{ display:block;padding:12px 18px;border-bottom:1px solid #C9C9C9;overflow:hidden;}
+.list_con .child em{color:#B7B6B7; font-size:0.85em; font-style:normal; float:right;}
+.list_con .child a:last-child ,.list_con .child li:last-child {border-bottom:0;}
+/*****************************************************************************/
+
+.search-input{margin:8px 11px;padding:5px 10px;overflow:hidden;background-color:#FFF;border:1px solid #E7E7E7;-border-radius:5px;-moz-border-radius:5px; -webkit-border-radius:5px;}
+/*表格样式*/
+.table {display:table;width:100%;table-layout:fixed; overflow:hidden;}
+.table-cell { position:relative;display:table-cell;overflow:hidden;vertical-align:middle;}
+
+/*更多样式*/
+#getmore{ background-color:#F0F0F0; text-align:center; line-height:40px;margin:0 15px 15px 15px; color:#333;border-radius:3px;-moz-border-radius:3px; -webkit-border-radius:3px; }
+
+/*列表视图*/
+.table-view {overflow:hidden;}
+.table-view-cell {position:relative;padding:8px 0;margin:0 16px;overflow:hidden;border-bottom:1px solid #DCDCDC;}	
+.table-view .media, .table-view .media-body,.table-view .information{overflow:hidden;}
+.table-view .pull-left {margin-right:8px;}
+.table-view img.pull-right {margin-left:8px;}
+
+.table-view .media-object {width:79px;height:58px; margin-top:2px;}
+.table-view p,.table-view .pull-right{ margin-bottom:0; margin-top:0;color:#8f8f94;font-size:13px;}
+.table-view img{ vertical-align:middle;}
+.table-view p.ellipsis-2{overflow:hidden; height:40px;line-height:19px;font-size:13px;overflow:hidden;text-overflow:ellipsis;}
+.table-view div.ellipsis{font-size:15px; }
+
+.table-view .media-color{font-size:13px;}
+.table-view .media-color{ display:inline; color:#C62823;}
+.table-view .media-color span{}
+
+.table-view-cell>a:not(.btn) {display:block;color:inherit;}
+.table-view-cell>a:not(.btn).active {background-color:#eee}
+
+.table-view .input-operate { position:absolute; right:0; top:49px; background-color:#F2EFEF;}
+.table-view .input-operate .bPale,.table-view .input-operate .bRed{line-height:19px; font-size:13px; margin-left:10px; padding:0 6px;}
+.table-view .media-checkbox{height:28px; padding-top:20px; float:left;margin-right:8px;}
+
+/*—————————信息浏览及编辑—————————*/
+.Readform{ text-align:center; padding:10px}
+.Readform table{ width:100%;}
+.Readform table td{ font-size:16px; color:#999; padding:8px 5px; white-space:nowrap; vertical-align:top; line-height:32px; text-align:left;}
+.Readform span{display:block;text-align:left;padding:4px 8px; height:auto; min-height:21px; line-height:21px;border: 1px solid #E2E5EA; background-color:#FFF;-border-radius:3px;-moz-border-radius:3px; -webkit-border-radius:3px;}
+.Eidtform span:hover,.Eidtform span:focus{ background-color:#EBF4FD; border:1px solid #CAE5FA;}
+.Readform table td.TDleft{text-align:right;}

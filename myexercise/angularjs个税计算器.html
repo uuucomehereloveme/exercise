@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-cn">
+ <head>
+  <!--页面编码-->
+  <meta charset="UTF-8">
+  <!--响应式布局-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>angularjs</title>
+  <!--Bootstrap样式文件-->
+  <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
+  <!--自定义样式文件-->
+  <link rel='stylesheet/less' type='text/css' href='styles/site2.less'>
+  <!--[if lt IE9]>
+    <script src='scripts/html5.min.js'></script>
+    <script src='scripts/respond.min.js'></script>
+  <![endif]-->
+  <!--标签名称-->
+  <title>angularjs</title>
+ </head>
+ 
+ 
+ <body class='container'>	
+   <header class='page-header hidden-xs'>
+     <h2></h2>
+   </header>
+   
+   <!--<div data-ng-app='appTest'>
+   	   <div data-ng-controller='testCtrl'>
+	   	   {{person.firstName}}
+   	   </div>
+   </div>-->
+   
+   <div data-ng-app='appTax' data-ng-controller='taxCtrl'> 
+   	       <div class='panel panel-default'>
+               <div class='panel-body'>  	   	
+		   	   	   <div class='row'>
+		   	   	   	   <div class='col-sm-6'>
+			   	   	   	    <div class='input-group'>
+				   	   	        <span class='input-group-addon'>请输入税前工资￥：</span><input data-ng-model='baseSalary' class='form-control' type='text'>  	       
+				   	   	    </div>
+				   	   </div>
+
+		   	   	   	   <div class='col-sm-6'>
+			   	   	   	    <div class='input-group'>
+				   	   	        <span class='input-group-addon'>您的税后工资是￥：</span><input class='form-control' type='text'>  	       
+				   	   	    </div>
+				   	   </div>
+		   	   	   </div>
+		   	   </div>
+		   </div>
+   	   	   
+   	   	   <div class='panel panel-default'>
+   	   	       <div class='panel-heading'>
+   	   	           <small class='text-danger'>社保和公积金缴纳明细(参数可调整)</small>
+   	   	       </div>
+   	   	       <div class='panel-body'>
+   	   	       	   <div class='row'>
+   	   	       	       <div class='col-sm-6'>
+   	   	       	       	   <div class='row'>
+	   	   	       	       	   <div class='col-sm-4'>
+	   	   	                   	缴纳基数￥：社保
+	   	   	                   </div>
+	   	   	                   <div class='col-sm-4'>
+	   	   	       	       	       <input data-ng-model='baseSalary' type='text' class='form-control'>
+	   	   	       	       	   </div>
+   	   	                   </div>
+   	   	       	       </div>
+   	   	       	       <div class='col-sm-6'>
+   	   	       	       	   <div class='row'>
+	   	   	       	       	   <div class='col-sm-4'>
+	   	   	                   	公积金
+	   	   	                   </div>
+	   	   	                   <div class='col-sm-4'>
+	   	   	       	       	       <input type='text' class='form-control'>
+	   	   	       	       	   </div>
+   	   	                   </div>
+   	   	       	       </div>
+   	   	       	   </div>
+   	   	           <div class='row'>
+   	   	               <div class='col-sm-6'>  	   	               	                                        
+   	   	                   <div class='row'>
+	   	   	                   <div class='col-sm-4'>
+	   	   	                   	缴纳比列：单位缴纳
+	   	   	                   </div>
+   	   	                   </div>
+   	   	                   <!--养老-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                           	   <span class='input-group-addon'><input type='checkbox'></span>
+   	   	                               <span class='input-group-addon' style='width:90px;'>养老：</span>
+   	   	                               <input data-ng-model='Pension' type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥{{baseSalary*Pension/100}}</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--医疗-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                           	   <span class='input-group-addon'><input type='checkbox'></span>
+   	   	                               <span class='input-group-addon' style='width:90px;'>医疗：</span>
+   	   	                               <input data-ng-model='medicalTreatment' type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥{{baseSalary*medicalTreatment/100}}</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--失业-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                           	   <span class='input-group-addon'><input type='checkbox'></span>
+   	   	                               <span class='input-group-addon' style='width:90px;'>失业：</span>
+   	   	                               <input data-ng-model='unemployment' type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥{{baseSalary*unemployment/100}}</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--工伤-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                           	   <span class='input-group-addon'><input type='checkbox'></span>
+   	   	                               <span class='input-group-addon' style='width:90px;'>工伤：</span>
+   	   	                               <input data-ng-model='injury' type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥{{baseSalary*injury/100}}</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--公积金-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                           	   <span class='input-group-addon'><input type='checkbox'></span>
+   	   	                               <span class='input-group-addon' style='width:90px;'>公积金：</span>
+   	   	                               <input data-ng-model='accumulationFund' type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥{{baseSalary*accumulationFund/100}}</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	               </div>
+   	   	               <div class='col-sm-6'>	   	                                        
+   	   	                   <div class='row'>
+	   	   	                   <div class='col-sm-4'>
+	   	   	                   	个人缴纳
+	   	   	                   </div> 
+   	   	                   </div> 
+   	   	                   <!--养老-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                         
+   	   	                               <span class='input-group-addon hidden-md hidden-lg'>养老：</span>
+   	   	                               <input type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥1600</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--医疗-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                          
+   	   	                               <span class='input-group-addon hidden-md hidden-lg'>医疗：</span>
+   	   	                               <input type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥1600</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--失业-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                           	
+   	   	                               <span class='input-group-addon hidden-md hidden-lg'>失业：</span>
+   	   	                               <input type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥1600</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--工伤-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                        
+   	   	                               <span class='input-group-addon hidden-md hidden-lg'>工伤：</span>
+   	   	                               <input type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥1600</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div>  	   	                                        
+   	   	                   <!--公积金-->
+   	   	                   <div class='row'>
+   	   	                       <div class='col-sm-8'>
+   	   	                           <div class='input-group'>
+   	   	                           	   
+   	   	                               <span class='input-group-addon hidden-md hidden-lg'>公积金：</span>
+   	   	                               <input type='text' class='form-control'>
+   	   	                               <span class='input-group-addon'>%</span>
+   	   	                               <span class='input-group-addon'>￥1600</span>
+   	   	                           </div>
+   	   	                       </div> 
+   	   	                   </div> 
+   	   	               </div>
+   	   	               
+   	   	               <div class='col-sm-6'>
+   	   	                   <div class='row'>
+	   	   	                   <div class='col-sm-4 text-info'>
+	   	   	                                                            单位共缴纳：{{socialSecuritySum()}}
+	   	   	                   </div>
+   	   	                   </div>
+   	   	               </div>
+   	   	               <div class='col-sm-6'>
+   	   	                   <div class='row'>
+	   	   	                   <div class='col-sm-4 text-info'>
+	   	   	                                                             个人共缴纳：￥1779.00
+	   	   	                   </div>
+   	   	                   </div>
+   	   	               </div>
+     
+   	   	           </div>
+   	   	       </div>
+   	   	   </div>  
+   	   	   
+   	   	   <div class='panel panel-default'>
+               <div class='panel-body'>
+   	               <div class='row'>
+   	                   <div class='col-sm-2 text-info'>
+   	                                                             个税明细
+   	                   </div>
+   	                   <div class='col-sm-2 text-danger'>
+   	                       <input type='radio' value='1' name='tax'>&nbsp;旧个税
+   	                   </div>
+   	                   <div class='col-sm-2 text-danger'>
+   	                       <input type='radio' value='2' name='tax'>&nbsp;现行个税
+   	                   </div>
+   	                   <div class='col-sm-2 text-info'>
+   	                                                             缴纳个税
+   	                   </div>
+   	                   <div class='col-sm-2 text-info'>
+   	                       <span></span>                             
+   	                   </div>
+   	               </div>
+               </div>
+           </div>	   	   
+   </div>
+   
+   <footer class='navbar-fixed-bottom text-center'>
+   	 all images and contents &copy;
+   	 <abbr title='Hyper Tet Markup Language'>HTML</abbr>&trade;
+   </footer>
+   
+   
+   
+   <!--Jquery脚本文件-->
+   <script src='scripts/jquery.min.js'></script>
+   <!--Less脚本文件-->
+   <script src='scripts/less.js'></script>
+   <script src='scripts/angular-1.4.0.js'></script>
+   <!--Bootstrap脚本插件文件-->
+   <script src='bootstrap/js/bootstrap.min.js'></script>
+   <script src='js/controller.js'></script>
+   <script src='js/module.js'></script>
+</body>
+</html>
